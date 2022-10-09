@@ -9,9 +9,9 @@ const Post: React.FC<PostProps> = ({ title, content, reference }) => {
     <article className={styles.post}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.content}>{content}</p>
-      {/* <p className={styles.link}>
+      <p className={styles.link}>
         <Link href={`/posts/${reference}`}>Read full post</Link>
-      </p> */}
+      </p>
     </article>
   );
 };

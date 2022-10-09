@@ -7,12 +7,12 @@ import PostGrid from "../components/PostGrid";
 import { getAllPostsService } from "../services";
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const response = await getAllPostsService();
-  const response = {
-    data: [
-      { title: "My post", content: "This is a really cool and censorship less post" },
-    ],
-  };
+  const response = await getAllPostsService();
+  // const response = {
+  //   data: [
+  //     { title: "My post", content: "This is a really cool and censorship less post" },
+  //   ],
+  // };
   return {
     props: {
       response,
@@ -21,6 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ response }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(response)
   return (
     <>
       <h2 className="subtitle">Home</h2>
@@ -30,7 +31,7 @@ const Home: NextPage = ({ response }: InferGetStaticPropsType<typeof getStaticPr
             key={idx}
             title={post.title}
             content={post.content}
-            reference={post.title}
+            reference={response.references?.[idx].reference}
           />
         ))}
       </PostGrid>

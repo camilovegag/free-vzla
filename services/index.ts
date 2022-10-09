@@ -45,16 +45,16 @@ const getAllPostsService = () => {
     });
 };
 
-const getSinglePostService = (reference: string) => {
+const getSinglePostService = (reference: Object) => {
   const request = {
-    method: "GET",
+    method: "POST",
     headers: {
       "content-type": "application/json",
     },
     body: JSON.stringify(reference),
   };
 
-  fetch(
+  return fetch(
     `${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_GET_POST_ROUTE}`,
     request
   )
