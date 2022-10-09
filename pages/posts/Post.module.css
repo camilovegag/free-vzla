@@ -1,0 +1,7 @@
+.back {
+  cursor: pointer;
+}
+
+.title:hover {
+  text-decoration: underline;
+}

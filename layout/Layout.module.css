@@ -2,4 +2,11 @@
   margin: 0 auto;
   padding: 2rem 0 4rem;
   width: min(90%, 960px);
+  min-height: calc(100vh - 177px);
+}
+
+@media (min-width: 768px) {
+  .main {
+    min-height: calc(100vh - 156px);
+  }
 }

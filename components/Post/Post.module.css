@@ -1,9 +1,21 @@
 .post {
-  background-color: var(--color-white);
+  background-color: var(--color-card);
   border-radius: var(--border-radius);
+  cursor: pointer;
   padding: var(--default-padding);
+  transition: ease-in 0.2s;
+}
+
+.post:hover {
+  background-color: var(--color-card-hover);
+  transition: ease-in 0.2s;
 }
 
 .title {
   font-weight: 600;
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
 }
