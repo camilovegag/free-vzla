@@ -9,6 +9,12 @@
   font-weight: 500;
   padding: 0.5rem var(--default-padding);
   text-transform: uppercase;
+  transition: ease-out 0.2s;
+}
+
+.button:hover {
+  transition: ease-in 0.2s;
+  background-color: #999bff;
 }
 
 @media (min-width: 768px) {

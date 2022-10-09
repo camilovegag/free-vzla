@@ -39,8 +39,9 @@ const Create: NextPage = () => {
     <>
       <h2 className="subtitle">Create post</h2>
       <p>
-        Keep in mind your post will be splitted in mimimi and mumumu, together we are
-        fighthing censorship.
+        Keep in mind your post will be readeble by everyone, stay safe and avoid using
+        personal information, we handle the tricky stuff here. Together we are fighthing
+        censorship.
       </p>
       <section className={styles.form}>
         <Input type="text" placeholder="Title" value={title} setValue={setTitle} />
