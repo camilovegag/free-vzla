@@ -4,14 +4,14 @@ import styles from "./Post.module.css";
 
 import Link from "next/link";
 
-const Post: React.FC<PostProps> = ({ title, content }) => {
+const Post: React.FC<PostProps> = ({ title, content, reference }) => {
   return (
     <article className={styles.post}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.content}>{content}</p>
-      <Link className={styles.link} href="#">
-        Read full post
-      </Link>
+      {/* <p className={styles.link}>
+        <Link href={`/posts/${reference}`}>Read full post</Link>
+      </p> */}
     </article>
   );
 };

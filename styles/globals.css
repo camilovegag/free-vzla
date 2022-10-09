@@ -12,9 +12,10 @@
   --breakpoint-large: 1024px;
   --breakpoint-x-large: 1440px;
   --color-background: #f5f5f5;
-  --color-card: #fdfdfd;
   --color-card-hover: #ffffff;
+  --color-card: #fdfdfd;
   --color-grey: #ccc;
+  --color-primary: #b1b2ff;
   --color-text: #222222;
   --color-white: #ffffff;
   --default-padding: 16px;

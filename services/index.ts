@@ -9,7 +9,10 @@ const createPostService = (post: Post) => {
     body: JSON.stringify(post),
   };
 
-  fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_CREATE_POST_ROUTE}`, request)
+  fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_CREATE_POST_ROUTE}`,
+    request
+  )
     .then((response) => {
       if (response.ok) {
         return response;
@@ -28,7 +31,33 @@ const getAllPostsService = () => {
     },
   };
 
-  return fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_GET_ALL_POSTS_ROUTE}`, request)
+  return fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_GET_ALL_POSTS_ROUTE}`,
+    request
+  )
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .catch((error) => {
+      throw new Error(error);
+    });
+};
+
+const getSinglePostService = (reference: string) => {
+  const request = {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(reference),
+  };
+
+  fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_GET_POST_ROUTE}`,
+    request
+  )
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -48,7 +77,10 @@ const deletePostService = (reference: string) => {
     body: JSON.stringify(reference),
   };
 
-  fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_DELETE_POST_ROUTE}`, request)
+  fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_DELETE_POST_ROUTE}`,
+    request
+  )
     .then((response) => {
       if (response.ok) {
         return response;
@@ -59,4 +91,4 @@ const deletePostService = (reference: string) => {
     });
 };
 
-export { createPostService, getAllPostsService, deletePostService };
+export { createPostService, getSinglePostService, getAllPostsService, deletePostService };

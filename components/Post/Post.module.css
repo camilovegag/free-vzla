@@ -16,5 +16,6 @@
 }
 
 .link {
-  color: red !important;
+  color: var(--color-primary);
+  text-decoration: underline;
 }
