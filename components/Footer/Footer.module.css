@@ -1,0 +1,13 @@
+.footer {
+  background-color: #b1b2ff;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+  width: min(90%, 960px);
+}

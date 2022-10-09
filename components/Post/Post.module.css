@@ -1,0 +1,9 @@
+.post {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--default-padding);
+}
+
+.title {
+  font-weight: 600;
+}
