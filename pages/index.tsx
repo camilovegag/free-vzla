@@ -7,15 +7,17 @@ import PostGrid from "../components/PostGrid";
 import { getAllPostsService } from "../services";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getAllPostsService();
+  const response = await getAllPostsService();
   return {
     props: {
-      data,
+      response,
     },
   };
 };
 
-const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+// const Home: NextPage = ({ }) => {
+  const Home: NextPage = ({ response }: InferGetStaticPropsType<typeof getStaticProps>) => {
+    console.log('@response:', response)
   // const mockData = [
   //   { title: "First post", content: "This is some content" },
   //   { title: "Secont post", content: "McDonald's is selling yucas" },
@@ -29,7 +31,7 @@ const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>
     <>
       <h2 className="subtitle">Home</h2>
       <PostGrid>
-        {data.map((post: PostType, idx: number) => (
+        {response?.data.map((post: PostType, idx: number) => (
           <Post key={idx} title={post.title} content={post.content} />
         ))}
       </PostGrid>

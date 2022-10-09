@@ -9,7 +9,7 @@ const createPostService = (post: Post) => {
     body: JSON.stringify(post),
   };
 
-  fetch(`${process.env.BASE_API_URL}${process.env.CREATE_POST_ROUTE}`, request)
+  fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_CREATE_POST_ROUTE}`, request)
     .then((response) => {
       if (response.ok) {
         return response;
@@ -28,10 +28,10 @@ const getAllPostsService = () => {
     },
   };
 
-  fetch(`${process.env.BASE_API_URL}${process.env.GET_ALL_POSTS_ROUTE}`, request)
+  return fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_GET_ALL_POSTS_ROUTE}`, request)
     .then((response) => {
       if (response.ok) {
-        return response;
+        return response.json();
       }
     })
     .catch((error) => {
@@ -48,7 +48,7 @@ const deletePostService = (reference: string) => {
     body: JSON.stringify(reference),
   };
 
-  fetch(`${process.env.BASE_API_URL}${process.env.DELETE_POST_ROUTE}`, request)
+  fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${process.env.NEXT_PUBLIC_DELETE_POST_ROUTE}`, request)
     .then((response) => {
       if (response.ok) {
         return response;
